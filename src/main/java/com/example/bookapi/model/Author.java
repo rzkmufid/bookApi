@@ -18,7 +18,8 @@ public class Author {
     @Column(name = "name") // custom column
     private String name;
 
-    @Column(name = "biography") // custom column
+    @Lob
+    @Column(name = "biography", columnDefinition = "TEXT") // custom column
     private String biography;
 
 }

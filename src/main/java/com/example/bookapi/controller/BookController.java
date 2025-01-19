@@ -5,6 +5,9 @@ import com.example.bookapi.dto.BookDTO;
 import com.example.bookapi.model.Book;
 import com.example.bookapi.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,6 +39,12 @@ public class BookController {
     public List<BookDTO> findAll(){
         return bookService.findAll().stream().map(book -> bookService.mapToDTO(book)).collect(Collectors.toList());
     }
+
+    @GetMapping("/books")
+    public Page<BookDTO> findAllWithPagination(@PageableDefault Pageable pageable){
+        return bookService.findAll(pageable).map(book -> bookService.mapToDTO(book));
+    }
+
     @DeleteMapping("/delete/{id}")
     public Boolean delete(@PathVariable Long id) {
         return bookService.delete(id);

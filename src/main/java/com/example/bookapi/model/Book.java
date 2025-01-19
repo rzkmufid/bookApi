@@ -23,6 +23,6 @@ public class Book {
     private String publishDate;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "bookId")
     private List<Author> authors ;
 }
