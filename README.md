@@ -68,7 +68,7 @@ API akan berjalan di `http://localhost:8080`.
   
 Dokumentasi API dapat diakses melalui Swagger. Setelah aplikasi berjalan, buka URL berikut di browser Anda:  
   
-`http://localhost:8080/swagger-ui.html`
+`http://localhost:8080/swagger-ui/index.html`
 
   
 ## Kontribusi  
