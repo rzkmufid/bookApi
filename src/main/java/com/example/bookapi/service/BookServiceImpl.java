@@ -1,6 +1,7 @@
 package com.example.bookapi.service;
 
 import com.example.bookapi.dto.BookDTO;
+import com.example.bookapi.dto.BookRequestDTO;
 import com.example.bookapi.model.Book;
 import com.example.bookapi.repository.BookRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -75,7 +76,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book mapToEntity(BookDTO bookDTO) {
+    public Book mapToEntity(BookRequestDTO bookDTO) {
         return mapper.convertValue(bookDTO, Book.class);
     }
 }
