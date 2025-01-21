@@ -74,7 +74,4 @@ Dokumentasi API dapat diakses melalui Swagger. Setelah aplikasi berjalan, buka U
 ## Kontribusi  
   
 Jika Anda ingin berkontribusi pada proyek ini, silakan buat pull request atau buka isu untuk diskusi.  
-  
-## Lisensi  
-  
-Proyek ini dilisensikan di bawah [MIT License](LICENSE).  
+
