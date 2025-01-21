@@ -1,11 +1,14 @@
 package com.example.bookapi.service;
 
 import com.example.bookapi.dto.BookDTO;
+import com.example.bookapi.dto.BookRequestDTO;
 import com.example.bookapi.model.Book;
 import com.example.bookapi.repository.BookRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -54,6 +57,11 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public Page<Book> findAll(Pageable pageable) {
+        return bookRepository.findAll(pageable);
+    }
+
+    @Override
     public Book findById(Long id) {
         Optional<Book> result = bookRepository.findById(id);
         if (result.isPresent()) return result.get();
@@ -68,7 +76,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book mapToEntity(BookDTO bookDTO) {
+    public Book mapToEntity(BookRequestDTO bookDTO) {
         return mapper.convertValue(bookDTO, Book.class);
     }
 }
