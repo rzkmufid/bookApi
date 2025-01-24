@@ -41,8 +41,6 @@ Proyek ini mengikuti struktur standar untuk aplikasi Spring. Berikut adalah bebe
 ## Fitur  
   
 - CRUD untuk entitas Buku  
-- Penggunaan Blaze Bit untuk pengolahan data  
-- Query DSL untuk query yang lebih kompleks  
 - Dokumentasi API menggunakan Swagger  
   
 ## Dependensi  
